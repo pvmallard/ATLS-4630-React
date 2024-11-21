@@ -1,17 +1,24 @@
 import { useState } from 'react'
 import './App.css'
+import './Accessible.css'
+
+import Stat from './Stat.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      {/* <a className="skip-link" href="#maincontent">Skip to main content</a> */}
+
       <header>
-        <h1>Assignment 4</h1>
+        <h1>Creature Creator</h1>
       </header>
       
-      <main>
+      <main id="maincontent">
         <div className="card">
+          <Stat isMain={true} text="Strength" />
+          <Stat isMain={false} text="Perception" />
           <button onClick={() => setCount((count) => count + 1)}>
             count is {count}
           </button>
@@ -24,7 +31,7 @@ function App() {
       <footer>
         <p>designed by mal for everyone</p>
         <address>mvprescott17@gmail.com</address>
-        <small>&copy; <time datetime="2024-11-19 10:00" style="display:inline">November 19, 2024</time></small>
+        <small>&copy; November 19, 2024</small>
       </footer>
     </>
   )
